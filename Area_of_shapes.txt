@@ -1,0 +1,244 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Area_of_a_shape_calculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("This is a Calculator that calculates the area of Shapes. \n All dimensions in cm");
+
+            Console.WriteLine("Input the name of the shape you want to calculate its area");
+            string shape = Console.ReadLine().ToLower();
+
+            if (shape == "rectangle" || shape == "square" || shape == "parallelogram")
+            {
+                Console.WriteLine("Please type in the Length");
+                double length = Int32.Parse(Console.ReadLine());
+  
+                Console.WriteLine("Please type in the breadth");
+                double breadth = Int32.Parse(Console.ReadLine());
+
+                double result = length * breadth;
+                Console.WriteLine("The area of the " + shape + " is " + result + "cm");
+            }
+            else if (shape == "triangle")
+            {
+                Console.WriteLine("Please type in the height");
+                string value = Console.ReadLine();
+                double length = Convert.ToDouble(value);
+
+                Console.WriteLine("Please type in the base");
+                string based = Console.ReadLine();
+                double breadth = Convert.ToDouble(based);
+
+                double half = 0.5;
+                
+                double result = half * length * breadth;
+                Console.WriteLine("The area of the triangle is " + result + "cm");
+
+            }
+            else if (shape == "trapezium")
+            {
+                Console.WriteLine("Please type in the height");
+                string value = Console.ReadLine();
+                double length = Convert.ToDouble(value);
+
+                Console.WriteLine("Please type in the parallel side a");
+                string based = Console.ReadLine();
+                double breadth = Convert.ToDouble(based);
+
+                Console.WriteLine("Please type in the parallel side b");
+                string side = Console.ReadLine();
+                double breadt = Convert.ToDouble(side);
+
+                double sides = breadth + breadt;
+                double mid = 0.5;
+
+                double result = sides * mid * length  ;
+                Console.WriteLine("The area of the " +shape + " is " + result + "cm");
+
+            }
+            else if (shape == "circle")
+            {
+                Console.WriteLine("Please type in the radius");
+                double length = Int32.Parse(Console.ReadLine());
+
+                double pi = 3.1415926536;
+                double radi = length * length;
+                
+                double result = radi * pi;
+                Console.WriteLine("The area of the " + shape + " is " + result + "cm");
+
+            }
+            else if (shape == "cube")
+            { 
+                
+                    Console.WriteLine("Please type in the value of one of the sides");
+                    string value = Console.ReadLine();
+                    double length = Convert.ToDouble(value);
+
+                    double sides = length * length ;
+                    double result = sides * 6;
+                    Console.WriteLine("The area of the " + shape + " is " + result + "cm");
+
+            }
+            else if ("cuboid" == shape)
+            {
+
+                
+                    Console.WriteLine("Please type in the height");
+                    string value = Console.ReadLine();
+                    double height = Convert.ToDouble(value);
+
+                    Console.WriteLine("Please type in the length");
+                    string side = Console.ReadLine();
+                    double length = Convert.ToDouble(side);
+
+                    Console.WriteLine("Please type in the breadth");
+                    string based = Console.ReadLine();
+                    double breadth = Convert.ToDouble(based);
+
+                    double lb = length * breadth;
+                    double bh = breadth * height;
+                    double lh = length * height;
+
+                    double sides = lb + bh + lh;
+                    
+                    double result = 2 * sides;
+                    Console.WriteLine("The area of the " + shape + " is " + result + "cm");
+
+                
+            }
+            else if (shape == "cylinder")
+
+            {
+                Console.WriteLine("Please choose: \n  curved surface area or Total surface area ");
+                string area = Console.ReadLine().ToLower();
+                if (area == "curved surface area")
+                {
+                    Console.WriteLine("Please type in the base radius");
+                    double radius = Int32.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Please type in the height");
+                    double high = Int32.Parse(Console.ReadLine());
+
+                    double pie = 3.1415926536;
+                    
+
+                    double result1 = 2 * high * pie * radius;
+                    Console.WriteLine("The area of the " + shape + " is " + result1 + "cm");
+                }
+                else if (area == "total surface area")
+                {
+                    Console.WriteLine("Please type in the base radius");
+                    double length = Int32.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Please type in the height");
+                    double height = Int32.Parse(Console.ReadLine());
+
+                    double pi = 3.1415926536;
+                    double radi = length + height;
+
+                    double result = 2 * length * pi * radi;
+                    Console.WriteLine("The area of the " + shape + " is " + result + "cm");
+                }
+                else
+                {
+                    Console.WriteLine("Please type your choice correctly.");
+                }
+
+            }
+            else if (shape == "cone")
+
+
+            {
+                Console.WriteLine("Please choose: \n  curved surface area or Total surface area ");
+                try
+                {
+                    string area = Console.ReadLine().ToLower();
+                    if (area == "curved surface area")
+                    {
+                        Console.WriteLine("Please type in the base radius");
+                        double radius = Int32.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Please type in the slant height");
+                        double high = Int32.Parse(Console.ReadLine());
+
+                        double pie = 3.1415926536;
+
+
+                        double result1 = high * pie * radius;
+                        Console.WriteLine("The area of the " + shape + " is " + result1 + "cm");
+                    }
+                    else if (area == "total surface area")
+                    {
+                        Console.WriteLine("Please type in the base radius");
+                        double length = Int32.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Please type in the slant height");
+                        double height = Int32.Parse(Console.ReadLine());
+
+                        double pi = 3.1415926536;
+                        double radi = length + height;
+
+                        double result = length * pi * radi;
+                        Console.WriteLine("The area of the " + shape + " is " + result + "cm");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please type your choice correctly.");
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid input");
+                    throw;
+                }
+                
+                
+
+            }
+            else if (shape == "sphere")
+            {
+
+                
+                    Console.WriteLine("Please type in the radius");
+                    double length = Int32.Parse(Console.ReadLine());
+
+                    double radii = length * length;
+                    double pi = 3.1415926536;
+
+                    double result = 4 * radii * pi;
+                    Console.WriteLine("The area of the " + shape + " is " + result + "cm");
+                
+            }
+            else if (shape == "hemisphere")
+
+            {
+
+
+                Console.WriteLine("Please type in the radius");
+                double length = Int32.Parse(Console.ReadLine());
+
+                double radii = length * length;
+                double pi = 3.1415926536;
+
+                double result = 2 * radii * pi;
+                Console.WriteLine("The area of the " + shape + " is " + result + "cm");
+
+            }
+            else
+            {
+                Console.WriteLine("Please input a shape");
+            }
+
+
+            Console.ReadLine();
+        }
+    }
+}
